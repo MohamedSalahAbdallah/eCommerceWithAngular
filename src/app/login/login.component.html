@@ -1,0 +1,63 @@
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+  class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg"
+>
+  <!-- Email Field -->
+  <div class="mb-4">
+    <label for="email" class="block text-gray-700 font-bold mb-2">
+      Email:
+    </label>
+    <input
+      id="email"
+      formControlName="email"
+      type="email"
+      class="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-500"
+    />
+    <div
+      *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+      class="text-red-600 text-sm mt-1"
+    >
+      <small *ngIf="loginForm.get('email')?.hasError('required')"
+        >Email is required.</small
+      >
+      <small *ngIf="loginForm.get('email')?.hasError('email')"
+        >Enter a valid email.</small
+      >
+    </div>
+  </div>
+
+  <!-- Password Field -->
+  <div class="mb-4">
+    <label for="password" class="block text-gray-700 font-bold mb-2">
+      Password:
+    </label>
+    <input
+      id="password"
+      formControlName="password"
+      type="password"
+      class="w-full p-3 border rounded-lg focus:outline-none focus:border-blue-500"
+    />
+    <div
+      *ngIf="
+        loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+      "
+      class="text-red-600 text-sm mt-1"
+    >
+      <small *ngIf="loginForm.get('password')?.hasError('required')"
+        >Password is required.</small
+      >
+      <small *ngIf="loginForm.get('password')?.hasError('minlength')"
+        >Password must be at least 6 characters long.</small
+      >
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="loginForm.invalid"
+    class="w-full p-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition duration-200 disabled:opacity-50"
+  >
+    Login
+  </button>
+</form>

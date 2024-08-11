@@ -1,0 +1,20 @@
+<nav class="bg-gray-800 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a routerLink="/" class="text-white text-lg font-semibold">MyShop</a>
+    <div class="space-x-4">
+      <a routerLink="/cart" class="text-gray-300 hover:text-white"
+        >Cart @if (counter>0) {
+
+        <span
+          class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 dark:bg-gray-700 dark:text-gray-300 rounded-full w-fit"
+          >{{ counter }}</span
+        >
+        }
+      </a>
+      <a routerLink="/login" class="text-gray-300 hover:text-white">Login</a>
+      <a routerLink="/register" class="text-gray-300 hover:text-white"
+        >Register</a
+      >
+    </div>
+  </div>
+</nav>

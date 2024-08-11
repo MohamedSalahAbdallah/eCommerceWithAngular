@@ -1,0 +1,426 @@
+<div class="grid grid-cols-1 items-start gap-16 md:grid-cols-2">
+  <!-- Gallery -->
+  <div class="grid gap-4">
+    <div class="flex items-center justify-center">
+      <img
+        class="h-full max-w-full rounded-lg"
+        [src]="products?.thumbnail"
+        [alt]="products?.title + 'image'"
+      />
+    </div>
+    <div class="grid grid-cols-4 gap-4">
+      @for (imageSrc of products?.images; track imageSrc) {
+      <div
+        class="flex max-h-44 items-center justify-center rounded-lg border object-contain p-4"
+      >
+        <img class="h-full max-w-full" [src]="imageSrc" alt="" />
+      </div>
+      }
+    </div>
+  </div>
+  <!--** Details **-->
+  <div class="divide-y divide-black-200">
+    <!-- Title -->
+    <div class="pb-4">
+      <h1 class="mb-4 text-4xl font-bold text-black-950">
+        {{ products?.title }}
+      </h1>
+      <p class="mb-3 text-black-500">
+        <span class="font-semibold uppercase text-black-800">
+          {{ products?.category }}
+        </span>
+        <span class="mx-2">•</span>
+        <span class="font-semibold uppercase text-black-800">
+          {{ products?.brand }}
+        </span>
+      </p>
+      <p class="mb-3 tracking-wide text-gray-500">
+        {{ products?.description }}
+      </p>
+
+      <!-- Rating -->
+      <div class="flex">
+        @if (products!.rating==5) {
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        }@else if (products!.rating>4) {
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        }@else if (products!.rating>3) {
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        }@else if (products!.rating>2) {
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        }@else if (products!.rating>1) {
+        <svg
+          class="w-4 h-4 text-yellow-300"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        }@else {
+        <svg
+          class="w-4 h-4 text-gray-500"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        }
+      </div>
+      <!-- Price -->
+      <div class="py-6">
+        @if (products?.discountPercentage) {
+        <h2 class="mb-3 space-x-1 font-semibold">
+          <span class="text-4xl text-black-800">
+            {{ products!.price | discount : products!.discountPercentage }}
+            EGP
+          </span>
+          <span class="text-lg text-gray-400"> instead of </span>
+          <span class="text-lg text-red-800 line-through">
+            {{ products?.price }}
+          </span>
+        </h2>
+        <p class="italic text-gray-500">Limited time offer</p>
+        } @else {
+        <h2 class="mb-3 text-4xl font-semibold">
+          {{ products?.price }}
+        </h2>
+        }
+      </div>
+      <!-- stock badge -->
+      <div class="space-y-4 py-6">
+        @if (products!.stock > 0) {
+        <span
+          class="text-md inline-block rounded-full bg-black-100 px-4 py-1 font-medium text-black-800 dark:bg-black-900 dark:text-black-300"
+          >In stock</span
+        >
+        } @else {
+        <span
+          class="text-md inline-block rounded-full bg-red-100 px-4 py-1 font-medium text-red-800 dark:bg-red-900 dark:text-red-300"
+          >Out of stock</span
+        >
+        }
+        <!-- Info -->
+        <div
+          class="grid grid-cols-1 place-content-start gap-y-8 xl:grid-cols-2"
+        >
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-black-800">
+                <svg
+                  class="h-6 w-6"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 3v4a1 1 0 0 1-1 1H5m8-2h3m-3 3h3m-4 3v6m4-3H8M19 4v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1ZM8 12v6h8v-6H8Z"
+                  />
+                </svg>
+              </span>
+              <span class="text-black-600">{{
+                products?.warrantyInformation
+              }}</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-black-800">
+                <svg
+                  class="inline-block h-6 w-6"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
+                  />
+                </svg>
+              </span>
+              <span class="text-black-600">{{
+                products?.shippingInformation
+              }}</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-black-800">
+                <svg
+                  class="h-6 w-6"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4"
+                  />
+                </svg>
+              </span>
+              <span class="text-black-600">{{ products?.returnPolicy }}</span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-black-800">
+                <svg
+                  class="h-6 w-6"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5.005 11.19V12l6.998 4.042L19 12v-.81M5 16.15v.81L11.997 21l6.998-4.042v-.81M12.003 3 5.005 7.042l6.998 4.042L19 7.042 12.003 3Z"
+                  />
+                </svg>
+              </span>
+              <span class="text-black-600"
+                >{{ products?.minimumOrderQuantity }} items to start an
+                order</span
+              >
+            </div>
+          </div>
+          <div class="space-y-6">
+            <!-- Tags -->
+
+            <div class="flex flex-wrap items-center gap-4">
+              <p class="text-md text-black-800">Tags</p>
+              @for (tag of products?.tags; track tag) {
+              <span
+                class="inline-block rounded-lg border border-black-800 bg-black-100 px-2 py-1 text-xs font-medium text-black-800 dark:bg-black-900 dark:text-black-300"
+                >{{ tag }}</span
+              >
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Select quantity button group + stock count -->
+      <div
+        class="flex flex-wrap-reverse items-center justify-center gap-6 py-6 sm:justify-start"
+      >
+        <div class="flex w-full justify-center sm:w-fit">
+          <span
+            class="inline-flex select-none items-center gap-8 rounded-full border border-black-300 bg-black-50 px-8 font-medium text-black-900 focus:outline-none focus:ring-4 focus:ring-black-100 dark:border-black-600 dark:bg-black-800 dark:text-white dark:focus:ring-black-700"
+          >
+            <span
+              (click)="counterDecrement()"
+              role="button"
+              type="button"
+              class="cursor-pointer text-5xl font-light"
+              >-</span
+            >
+            <span class="text-xl">{{ counter }}</span>
+            <span
+              (click)="counterIncrement(products)"
+              role="button"
+              type="button"
+              class="cursor-pointer text-3xl font-light"
+              >+</span
+            >
+          </span>
+        </div>
+      </div>
+      <div
+        class="mx-auto flex w-[65%] flex-wrap items-center gap-4 py-6 sm:w-[100%] md:mx-0 md:w-[75%] 2xl:w-[50%]"
+      >
+        <button
+          type="button"
+          class="min-w-[50%] flex-1 rounded-full border border-black-700 px-5 py-2.5 text-center text-lg font-medium text-black-700 duration-150 hover:bg-black-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-black-300 dark:border-black-500 dark:text-black-500 dark:hover:bg-black-600 dark:hover:text-white dark:focus:ring-black-800 sm:min-w-max xl:border-2 xl:px-7 xl:text-xl"
+        >
+          Buy now
+        </button>
+
+        <button
+          type="button"
+          (click)="addToCart(products!, counter)"
+          class="min-w-[50%] flex-1 rounded-full border border-black-700 px-5 py-2.5 text-center text-lg font-medium text-black-700 duration-150 hover:bg-black-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-black-300 dark:border-black-500 dark:text-black-500 dark:hover:bg-black-600 dark:hover:text-white dark:focus:ring-black-800 sm:min-w-max xl:border-2 xl:px-7 xl:text-xl"
+        >
+          Add to cart
+        </button>
+      </div>
+      <div>&nbsp;</div>
+    </div>
+  </div>
+</div>
