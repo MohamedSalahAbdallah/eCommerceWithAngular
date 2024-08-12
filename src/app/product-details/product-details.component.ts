@@ -26,9 +26,14 @@ export class ProductDetailsComponent {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(this.id);
 
-    this.Productservice.currentMessage.subscribe((products) => {
-      this.products = products[this.id - 1];
+    // this.Productservice.currentMessage.subscribe((products) => {
+    //   this.products = products[this.id - 1];
+    // });
+    Productservice.getProductDetails(this.id).subscribe((product) => {
+      this.products = product;
+      console.log(product);
     });
+
     console.log(this.products);
   }
 

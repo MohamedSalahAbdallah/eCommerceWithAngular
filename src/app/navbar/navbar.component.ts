@@ -18,5 +18,4 @@ export class NavbarComponent {
       this.counter = items.length;
     });
   }
-  
 }
