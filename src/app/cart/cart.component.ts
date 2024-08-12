@@ -39,11 +39,11 @@ export class CartComponent {
   }
 
   counterDecrement(item: ICartItem) {
-    if (item.quantity > 1) {
-      item.quantity--;
-    }
     if (item.quantity == 1) {
       this.removeFromCart(item);
+    }
+    if (item.quantity > 1) {
+      item.quantity--;
     }
 
     this.totalPrice = Math.round(this.cartService.getTotalPrice());
